@@ -22,3 +22,5 @@
 
   - Aller sur Eclipse, sur votre projet, clique droit puis aller dans Properties->Android. En bas dans "library" supprimer toutes les libraries associés,
   puis ajouter appcompat_v7.
+  - Enfin aller sur votre dossier du projet puis modifier le fichier project.properties
+  modifier le 'X' de la ligne target=android-X par '20' 
