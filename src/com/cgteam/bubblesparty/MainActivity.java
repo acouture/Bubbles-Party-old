@@ -1,4 +1,6 @@
-package com.cgteam.bubbles_party;
+package com.cgteam.bubblesparty;
+
+import com.cgteam.bubbles_party.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
