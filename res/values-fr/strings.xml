@@ -4,9 +4,9 @@
     <string name="app_name">Bubbles Party</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="infinite_mode">Infinite mode</string>
-    <string name="classic_mode">Classic mode</string>
-    <string name="quit">Quit</string>
+    <string name="infinite_mode">Mode infini</string>
+    <string name="classic_mode">Mode classic</string>
+    <string name="quit">Quitter</string>
     <string name="version_name">0.1</string>
 
 </resources>
