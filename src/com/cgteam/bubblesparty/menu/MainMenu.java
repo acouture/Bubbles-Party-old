@@ -1,22 +1,42 @@
 package com.cgteam.bubblesparty.menu;
 
-import com.cgteam.bubblesparty.R;
-import com.cgteam.bubblesparty.R.id;
-import com.cgteam.bubblesparty.R.layout;
-import com.cgteam.bubblesparty.R.menu;
-
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+import com.cgteam.bubblesparty.R;
 
 
-public class MainMenu extends ActionBarActivity {
+public class MainMenu extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        
+        Button infiniteMode = (Button) findViewById(R.id.buttonInfinite);
+		infiniteMode.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				// TODO
+//				setGameplay(0);
+//				Intent intent = new Intent(MainMenuActivity.this, GamePlayActivity.class);
+//				startActivity(intent);
+			}
+		});
+		
+		Button classicMode = (Button) findViewById(R.id.buttonClassic);
+		classicMode.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				// TODO
+//				setGameplay(1);
+//				Intent intent = new Intent(MainMenuActivity.this, GamePlayActivity.class);
+//				startActivity(intent);
+			}
+		});
+        
     }
 
 
