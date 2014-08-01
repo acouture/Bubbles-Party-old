@@ -3,14 +3,20 @@ package com.cgteam.bubblesparty.menu;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ViewFlipper;
 
 import com.cgteam.bubblesparty.R;
 
 
 public class MainMenu extends BaseActivity {
+	
+	/* Slide des modes de jeu */
+	private ViewFlipper viewSlide;
+	private Slide slide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,8 @@ public class MainMenu extends BaseActivity {
 //				startActivity(intent);
 			}
 		});
-        
+		viewSlide = (ViewFlipper) findViewById(R.id.slideGameMode);
+		slide = new Slide( this, viewSlide );
     }
 
 
@@ -57,5 +64,11 @@ public class MainMenu extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public boolean onTouchEvent(MotionEvent touchevent){
+    	slide.onTouchEvent(touchevent);
+    	return false;
     }
 }

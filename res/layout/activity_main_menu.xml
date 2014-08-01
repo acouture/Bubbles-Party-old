@@ -59,5 +59,56 @@
         android:text="@string/version_name"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#242424" />
+    
+    <ViewFlipper
+        android:id="@+id/slideGameMode"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="false"
+        android:layout_margin="6dip"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="166dp" >
+        
+        <!--  Layout 1 for 1st Screen -->
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="This Is Screen 1"
+                    android:textColor="#191975"
+                    android:textSize="25dp"
+                    android:textStyle="bold" >
+                </TextView>
+                
+        </LinearLayout>
+        
+        <!--  Layout 2 for 2nd Screen -->
+            
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This Is Screen 2"
+                    android:textColor="#191975"
+                    android:textSize="25dp"
+                    android:textStyle="bold" >
+                </TextView>
+            
+        </LinearLayout>
+
+    </ViewFlipper>
 
 </RelativeLayout>
