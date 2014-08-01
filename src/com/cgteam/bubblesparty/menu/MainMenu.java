@@ -4,15 +4,21 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.cgteam.bubblesparty.R;
 
 
 public class MainMenu extends BaseActivity {
+	
+	/* Slide des modes de jeu */
+	private ViewFlipper viewSlide;
+	private Slide slide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,7 @@ public class MainMenu extends BaseActivity {
 //				startActivity(intent);
 			}
 		});
+
 		
 		String versionName = null;
 		try {
@@ -48,6 +55,12 @@ public class MainMenu extends BaseActivity {
 		TextView tvVersion = (TextView) findViewById(R.id.textVersion);
 		if(versionName != null)
 			tvVersion.setText(versionName);
+
+			
+		// slide
+		viewSlide = (ViewFlipper) findViewById(R.id.slideGameMode);
+		slide = new Slide( this, viewSlide );
+
     }
 
 
@@ -68,5 +81,11 @@ public class MainMenu extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public boolean onTouchEvent(MotionEvent touchevent){
+    	slide.onTouchEvent(touchevent);
+    	return false;
     }
 }
