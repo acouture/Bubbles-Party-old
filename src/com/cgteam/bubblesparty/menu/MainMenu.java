@@ -1,11 +1,13 @@
 package com.cgteam.bubblesparty.menu;
 
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.cgteam.bubblesparty.R;
 
@@ -36,7 +38,16 @@ public class MainMenu extends BaseActivity {
 //				startActivity(intent);
 			}
 		});
-        
+		
+		String versionName = null;
+		try {
+			versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+		}
+		TextView tvVersion = (TextView) findViewById(R.id.textVersion);
+		if(versionName != null)
+			tvVersion.setText(versionName);
     }
 
 

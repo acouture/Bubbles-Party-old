@@ -7,6 +7,6 @@
     <string name="infinite_mode">Infinite mode</string>
     <string name="classic_mode">Classic mode</string>
     <string name="quit">Quit</string>
-    <string name="version_name">0.1</string>
+    <string name="version_name">version name</string>
 
 </resources>
