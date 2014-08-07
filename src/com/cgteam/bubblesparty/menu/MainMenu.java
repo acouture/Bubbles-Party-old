@@ -8,12 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.cgteam.bubblesparty.R;
 
 
 public class MainMenu extends BaseActivity {
 
+	/* Slide des différents jeux */
+	private ViewFlipper viewSlide;
+	private Slide slide;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +28,10 @@ public class MainMenu extends BaseActivity {
         drawVersionOfProject();
         
         /* Changement de la police sur les éléments à écrire (btn)*/
-        changeFonts();
+        changeBtnFonts();
+        
+        /* Création du slide */
+        slide();
     }
 
 
@@ -48,6 +56,9 @@ public class MainMenu extends BaseActivity {
     
     @Override
     public boolean onTouchEvent(MotionEvent touchevent){
+    	/* Evènements du slide */
+    	slide.onTouchEvent(touchevent);
+    	
     	return false;
     }
     
@@ -73,10 +84,28 @@ public class MainMenu extends BaseActivity {
     /** 
      * Changement de la police d'écriture sur les boutons
      */
-    public void changeFonts(){
+    public void changeBtnFonts(){
     	String fontPath = "fonts/Bambina.ttf";
         TextView btn_quit = (TextView)findViewById(R.id.buttonQuit);
         Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
         btn_quit.setTypeface(type);
+    }
+    
+    /** 
+     * Création d'un slide des différents jeux 
+     */
+    public void slide(){
+    	viewSlide = (ViewFlipper) findViewById(R.id.slideGame);
+		slide = new Slide( viewSlide.getContext(), viewSlide );
+		
+		/* Changement police titre */
+		String fontPath = "fonts/Bambina.ttf";
+        Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
+        
+        TextView title_game1 = (TextView)findViewById(R.id.titleGame1);
+        title_game1.setTypeface(type);
+        
+        TextView title_game2 = (TextView)findViewById(R.id.titleGame2);
+        title_game2.setTypeface(type);
     }
 }
