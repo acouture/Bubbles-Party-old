@@ -21,6 +21,24 @@ public class Slide {
 		this.context = context;
 	}
 	
+	public void swapright(){
+		// Cas où il n'y a plus de mode
+        if (slide.getDisplayedChild() == 0)
+        	return;
+        slide.setInAnimation(context, R.anim.in_from_left);
+        slide.setOutAnimation(context, R.anim.out_to_right);
+        slide.showNext();
+	}
+	
+	public void swapleft(){
+		// Cas où il n'y a plus de mode
+        if (slide.getDisplayedChild() == 1)
+        	return;  
+         slide.setInAnimation(context, R.anim.in_from_right);
+         slide.setOutAnimation(context, R.anim.out_to_left);
+         slide.showPrevious();
+	}
+	
 	public void onTouchEvent(MotionEvent touchevent){
 		
 		if ( context != null && slide != null ){
@@ -38,21 +56,11 @@ public class Slide {
 	                
 	    			// swap droite
 	    			if (touchX < currentX){
-	    				// Cas où il n'y a plus de mode
-	                    if (slide.getDisplayedChild() == 0)
-	                    	break;
-	                    slide.setInAnimation(context, R.anim.in_from_left);
-	                    slide.setOutAnimation(context, R.anim.out_to_right);
-	                    slide.showNext();
+	    				swapright();
 	                 }
 	    			// swap gauche
 	                 if (touchX > currentX){
-	                	// Cas où il n'y a plus de mode
-	                    if (slide.getDisplayedChild() == 1)
-	                    	break;  
-	                     slide.setInAnimation(context, R.anim.in_from_right);
-	                     slide.setOutAnimation(context, R.anim.out_to_left);
-	                     slide.showPrevious();
+	                	 swapleft();
 	                 }
 	                 
 	                 break;

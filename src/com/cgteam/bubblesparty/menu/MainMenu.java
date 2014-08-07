@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-
+import android.view.View.OnClickListener;
 import com.cgteam.bubblesparty.R;
 
 
@@ -32,6 +33,9 @@ public class MainMenu extends BaseActivity {
         
         /* Création du slide */
         slide();
+        
+        /* Attribution des fonctions sur les boutons */
+        bindButtons();
     }
 
 
@@ -52,14 +56,6 @@ public class MainMenu extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-    
-    @Override
-    public boolean onTouchEvent(MotionEvent touchevent){
-    	/* Evènements du slide */
-    	slide.onTouchEvent(touchevent);
-    	
-    	return false;
     }
     
     /**
@@ -107,5 +103,21 @@ public class MainMenu extends BaseActivity {
         
         TextView title_game2 = (TextView)findViewById(R.id.titleGame2);
         title_game2.setTypeface(type);
+    }
+    
+    public void bindButtons(){
+    	 Button leftSlide = (Button) findViewById(R.id.buttonLeftSlide);
+         leftSlide.setOnClickListener(new OnClickListener() {
+ 			public void onClick(View v) {
+ 				slide.swapright();
+ 			}
+ 		});
+         
+         Button rightSlide = (Button) findViewById(R.id.buttonRightSlide);
+         rightSlide.setOnClickListener(new OnClickListener() {
+ 			public void onClick(View v) {
+ 				slide.swapleft();
+ 			}
+ 		});
     }
 }
