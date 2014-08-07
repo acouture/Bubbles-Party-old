@@ -1,6 +1,7 @@
 package com.cgteam.bubblesparty.menu;
 
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -20,6 +21,9 @@ public class MainMenu extends BaseActivity {
 		
 		/* Version du jeu */
         drawVersionOfProject();
+        
+        /* Changement de la police sur les éléments à écrire (btn)*/
+        changeFonts();
     }
 
 
@@ -64,5 +68,15 @@ public class MainMenu extends BaseActivity {
 			tvVersion.setText(versionName);
 		else
 			Log.e("VERSION", "Un problème est survenue lors de l'éditage de la version");
+    }
+    
+    /** 
+     * Changement de la police d'écriture sur les boutons
+     */
+    public void changeFonts(){
+    	String fontPath = "fonts/Bambina.ttf";
+        TextView btn_quit = (TextView)findViewById(R.id.buttonQuit);
+        Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
+        btn_quit.setTypeface(type);
     }
 }

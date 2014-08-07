@@ -17,7 +17,7 @@
         android:layout_alignParentRight="true"
         android:text="@string/version_name"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#242424" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/buttonQuit"
@@ -25,9 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textVersion"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
+        android:background="@drawable/btn_custom"
         android:minWidth="85dp"
         android:onClick="quit"
-        android:text="@string/quit" />
+        android:text="@string/quit"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
 
 </RelativeLayout>
