@@ -1,66 +1,41 @@
 package com.cgteam.bubblesparty.menu;
 
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-
+import android.view.View.OnClickListener;
 import com.cgteam.bubblesparty.R;
 
 
 public class MainMenu extends BaseActivity {
-	
-	/* Slide des modes de jeu */
+
+	/* Slide des différents jeux */
 	private ViewFlipper viewSlide;
 	private Slide slide;
-
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+		
+		/* Version du jeu */
+        drawVersionOfProject();
         
-        Button infiniteMode = (Button) findViewById(R.id.buttonInfinite);
-		infiniteMode.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				// TODO
-//				setGameplay(0);
-//				Intent intent = new Intent(MainMenuActivity.this, GamePlayActivity.class);
-//				startActivity(intent);
-			}
-		});
-		
-		Button classicMode = (Button) findViewById(R.id.buttonClassic);
-		classicMode.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				// TODO
-//				setGameplay(1);
-//				Intent intent = new Intent(MainMenuActivity.this, GamePlayActivity.class);
-//				startActivity(intent);
-			}
-		});
-
-		
-		String versionName = null;
-		try {
-			versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-		}
-		TextView tvVersion = (TextView) findViewById(R.id.textVersion);
-		if(versionName != null)
-			tvVersion.setText(versionName);
-
-			
-		// slide
-		viewSlide = (ViewFlipper) findViewById(R.id.slideGameMode);
-		slide = new Slide( this, viewSlide );
-
+        /* Changement de la police sur les éléments à écrire (btn)*/
+        changeBtnFonts();
+        
+        /* Création du slide */
+        slide();
+        
+        /* Attribution des fonctions sur les boutons */
+        bindButtons();
     }
 
 
@@ -83,9 +58,66 @@ public class MainMenu extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    @Override
-    public boolean onTouchEvent(MotionEvent touchevent){
-    	slide.onTouchEvent(touchevent);
-    	return false;
+    /**
+     * Récupération de la version du projet
+     */
+    public void drawVersionOfProject(){
+    	String versionName = null;
+		try {
+			versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+			Log.e("VERSION", "Un problème est survenue lors de la récupération de la version du projet.");
+		}
+		TextView tvVersion = (TextView) findViewById(R.id.textVersion);
+		
+		if(versionName != null && tvVersion != null)
+			tvVersion.setText(versionName);
+		else
+			Log.e("VERSION", "Un problème est survenue lors de l'éditage de la version");
+    }
+    
+    /** 
+     * Changement de la police d'écriture sur les boutons
+     */
+    public void changeBtnFonts(){
+    	String fontPath = "fonts/Bambina.ttf";
+        TextView btn_quit = (TextView)findViewById(R.id.buttonQuit);
+        Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
+        btn_quit.setTypeface(type);
+    }
+    
+    /** 
+     * Création d'un slide des différents jeux 
+     */
+    public void slide(){
+    	viewSlide = (ViewFlipper) findViewById(R.id.slideGame);
+		slide = new Slide( viewSlide.getContext(), viewSlide );
+		
+		/* Changement police titre */
+		String fontPath = "fonts/Bambina.ttf";
+        Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
+        
+        TextView title_game1 = (TextView)findViewById(R.id.titleGame1);
+        title_game1.setTypeface(type);
+        
+        TextView title_game2 = (TextView)findViewById(R.id.titleGame2);
+        title_game2.setTypeface(type);
+    }
+    
+    public void bindButtons(){
+    	 Button leftSlide = (Button) findViewById(R.id.buttonLeftSlide);
+         leftSlide.setOnClickListener(new OnClickListener() {
+ 			public void onClick(View v) {
+ 				slide.swapright();
+ 			}
+ 		});
+         
+         Button rightSlide = (Button) findViewById(R.id.buttonRightSlide);
+         rightSlide.setOnClickListener(new OnClickListener() {
+ 			public void onClick(View v) {
+ 				slide.swapleft();
+ 			}
+ 		});
     }
 }
