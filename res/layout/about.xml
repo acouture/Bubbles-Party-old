@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/about_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_title"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/about_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/about_name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/about_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/about_autor"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/about_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/about_version"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/about_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_join"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/facebook"
+        android:layout_width="40dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_network_facebook" />
+
+</LinearLayout>

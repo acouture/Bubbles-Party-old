@@ -51,13 +51,13 @@
             android:gravity="center"
             android:orientation="vertical" >
 
-            <!-- Title game 1 -->
+            <!-- Title game 1 : Splash Bubbles -->
 
             <TextView
                 android:id="@+id/titleGame1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Game 1"
+                android:text="@string/game1"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
@@ -106,6 +106,7 @@
         </LinearLayout>
     </ViewFlipper>
 
+    <!-- Bouton droite du slide -->
     <Button
         android:id="@+id/buttonRightSlide"
         android:layout_width="wrap_content"
@@ -114,6 +115,7 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/btn_menu_slide_right" />
 
+    <!-- Bouton gauche du slide -->
     <Button
         android:id="@+id/buttonLeftSlide"
         android:layout_width="wrap_content"

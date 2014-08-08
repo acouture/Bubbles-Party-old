@@ -13,6 +13,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        <!-- Main activity -->
         <activity
             android:name="com.cgteam.bubblesparty.menu.MainMenu"
             android:label="@string/app_name" >
@@ -22,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- Activity About -->
+        <activity 
+            android:name="com.cgteam.bubblesparty.menu.About"
+            android:icon="@drawable/ic_action_about"
+            android:label="@string/about"
+            android:parentActivityName="com.cgteam.bubblesparty.menu.MainMenu" >
+            
+            <meta-data
+            	android:name="android.support.PARENT_ACTIVITY"
+            	android:value="com.cgteam.bubblesparty.menu.About" />
+            </activity>
     </application>
 
 </manifest>

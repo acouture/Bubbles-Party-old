@@ -4,9 +4,9 @@
     tools:context="com.cgteam.bubbles_party.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:id="@+id/about"
+        android:icon="@drawable/ic_action_about"
+        android:title="@string/about"
+        android:showAsAction="never"/>
 
 </menu>
