@@ -1,5 +1,6 @@
 package com.cgteam.bubblesparty.menu;
 
+import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -41,21 +42,22 @@ public class MainMenu extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch(id){
+        case R.id.about:
+        	Intent intent = new Intent( this, About.class);
+        	startActivity(intent);
+        	return true;
+        default:
+        	return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+        
     }
     
     /**
@@ -106,6 +108,8 @@ public class MainMenu extends BaseActivity {
     }
     
     public void bindButtons(){
+    	
+    	/* Bouton de droite du slide */
     	 Button leftSlide = (Button) findViewById(R.id.buttonLeftSlide);
          leftSlide.setOnClickListener(new OnClickListener() {
  			public void onClick(View v) {
@@ -113,11 +117,21 @@ public class MainMenu extends BaseActivity {
  			}
  		});
          
+         /* Bouton de gauche du slide */
          Button rightSlide = (Button) findViewById(R.id.buttonRightSlide);
          rightSlide.setOnClickListener(new OnClickListener() {
  			public void onClick(View v) {
  				slide.swapleft();
  			}
  		});
+         
+         /* Image game 1 : Splash Bubbles*/
+         Button game1 = (Button) findViewById(R.id.AccessGame1);
+         game1.setOnClickListener(new OnClickListener() {
+ 			public void onClick(View v) {
+ 				
+ 			}
+ 		});
+         
     }
 }

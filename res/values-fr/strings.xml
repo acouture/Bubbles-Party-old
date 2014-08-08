@@ -8,5 +8,18 @@
     <string name="classic_mode">Mode classic</string>
     <string name="quit">Quitter</string>
     <string name="version_name">0.1</string>
+    
+    <!-- Slide : Titres des jeux -->
+    <string name="game1">Splash Bubbles</string>
+    
+    <!-- Option -->
+    <string name="about">A propos</string>
+    
+    <!-- Activité About -->
+    <string name="about_title">A propos de ce logiciel :</string>
+    <string name="about_name">Nom : Bubbles Party</string>
+	<string name="about_autor">Auteur : CGTeam</string>
+	<string name="about_version">Version :</string>
+	<string name="about_join">Nous rejoindre :</string>
 
 </resources>
