@@ -19,6 +19,9 @@ public class About extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
         
+        /* Affiche la barre de titre */
+        getActionBar().show();
+        
         /* Gestion de boutons */
         bindButtons();
         
