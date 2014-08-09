@@ -1,5 +1,6 @@
 package com.cgteam.bubblesparty.menu;
 
+import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -7,10 +8,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-import android.view.View.OnClickListener;
+
 import com.cgteam.bubblesparty.R;
 
 
@@ -98,26 +100,49 @@ public class MainMenu extends BaseActivity {
 		String fontPath = "fonts/Bambina.ttf";
         Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
         
-        TextView title_game1 = (TextView)findViewById(R.id.titleGame1);
+        TextView title_game1 = (TextView)findViewById(R.id.titleClassicMode);
         title_game1.setTypeface(type);
         
-        TextView title_game2 = (TextView)findViewById(R.id.titleGame2);
+        TextView title_game2 = (TextView)findViewById(R.id.titleInfiniteMode);
         title_game2.setTypeface(type);
     }
     
     public void bindButtons(){
-    	 Button leftSlide = (Button) findViewById(R.id.buttonLeftSlide);
-         leftSlide.setOnClickListener(new OnClickListener() {
+    	Button leftSlide = (Button) findViewById(R.id.buttonLeftSlide);
+        leftSlide.setOnClickListener(new OnClickListener() {
  			public void onClick(View v) {
  				slide.swapright();
  			}
+ 		
  		});
          
-         Button rightSlide = (Button) findViewById(R.id.buttonRightSlide);
-         rightSlide.setOnClickListener(new OnClickListener() {
+        Button rightSlide = (Button) findViewById(R.id.buttonRightSlide);
+        rightSlide.setOnClickListener(new OnClickListener() {
  			public void onClick(View v) {
  				slide.swapleft();
  			}
  		});
+        
+        Button classicMode = (Button) findViewById(R.id.AccessClassicMode);
+        classicMode.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(), GamePlay.class);
+	         	intent.putExtra("id", EGamePlay.CLASSIC);
+	     		startActivity(intent);
+			}
+		});
+         
+        Button infiniteMode = (Button) findViewById(R.id.AccessInfiniteMode);
+        infiniteMode.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(), GamePlay.class);
+	         	intent.putExtra("id", EGamePlay.INFINITE);
+	     		startActivity(intent);
+			}
+		});
     }
 }

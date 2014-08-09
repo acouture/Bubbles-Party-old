@@ -19,18 +19,6 @@
     <!--  Bouton slide gauche -->
 
     <!--  Bouton quitter -->
-    <Button
-        android:id="@+id/buttonQuit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textVersion"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/btn_custom"
-        android:minWidth="85dp"
-        android:onClick="quit"
-        android:text="@string/quit"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp" />
     
     <!-- Slide présentant les différents jeux -->
 
@@ -45,7 +33,7 @@
 
         <!-- Jeu 1 -->
         <LinearLayout
-            android:id="@+id/layoutGame1"
+            android:id="@+id/layoutCLassicMode"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center"
@@ -54,10 +42,10 @@
             <!-- Title game 1 -->
 
             <TextView
-                android:id="@+id/titleGame1"
+                android:id="@+id/titleClassicMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Game 1"
+                android:text="@string/classic_mode"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
@@ -65,7 +53,7 @@
                 android:textStyle="bold" />
             
             <Button
-		        android:id="@+id/AccessGame1"
+		        android:id="@+id/AccessClassicMode"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/menu_slide_img_not_found"
@@ -76,7 +64,7 @@
 
         <!-- Jeu 2 -->
         <LinearLayout
-            android:id="@+id/layoutGame2"
+            android:id="@+id/layoutInfiniteMode"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center"
@@ -85,10 +73,10 @@
             <!-- Title game 2 -->
 
             <TextView
-                android:id="@+id/titleGame2"
+                android:id="@+id/titleInfiniteMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Game 2"
+                android:text="@string/infinite_mode"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
@@ -96,7 +84,7 @@
                 android:textStyle="bold" />
             
             <Button
-		        android:id="@+id/AccessGame2"
+		        android:id="@+id/AccessInfiniteMode"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/menu_slide_img_not_found"
@@ -121,5 +109,18 @@
         android:layout_alignBottom="@+id/slideGame"
         android:layout_alignParentLeft="true"
         android:background="@drawable/btn_menu_slide_left" />
+
+    <Button
+        android:id="@+id/buttonQuit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textVersion"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_custom"
+        android:minWidth="85dp"
+        android:onClick="quit"
+        android:text="@string/quit"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
 
 </RelativeLayout>
