@@ -51,7 +51,7 @@ public class MainMenu extends BaseActivity {
         int id = item.getItemId();
         switch(id){
         case R.id.about:
-        	Intent intent = new Intent( this, About.class);
+        	Intent intent = new Intent( getApplicationContext(), About.class);
         	startActivity(intent);
         	return true;
         default:

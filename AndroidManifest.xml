@@ -30,12 +30,7 @@
             android:name="com.cgteam.bubblesparty.menu.About"
             android:icon="@drawable/ic_action_about"
             android:label="@string/about"
-            android:parentActivityName="com.cgteam.bubblesparty.menu.MainMenu" >
-            
-            <meta-data
-            	android:name="android.support.PARENT_ACTIVITY"
-            	android:value="com.cgteam.bubblesparty.menu.About" />
-            </activity>
+            android:parentActivityName="com.cgteam.bubblesparty.menu.MainMenu" />
     </application>
 
 </manifest>
