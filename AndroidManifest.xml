@@ -29,8 +29,15 @@
         <activity 
             android:name="com.cgteam.bubblesparty.menu.About"
             android:icon="@drawable/ic_action_about"
-            android:label="@string/about"
-            android:parentActivityName="com.cgteam.bubblesparty.menu.MainMenu" />
+            android:label="@string/about" >
+         </activity>
+         
+        <!-- Activity GamePlay -->
+        <activity
+			android:name="com.cgteam.bubblesparty.menu.GamePlay"
+			android:label="@string/app_name" >
+        </activity>
+        
     </application>
 
 </manifest>

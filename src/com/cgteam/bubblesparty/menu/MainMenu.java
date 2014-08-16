@@ -50,12 +50,12 @@ public class MainMenu extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch(id){
-        case R.id.about:
-        	Intent intent = new Intent( getApplicationContext(), About.class);
-        	startActivity(intent);
-        	return true;
-        default:
-        	return super.onOptionsItemSelected(item);
+	        case R.id.about:
+	        	Intent intent = new Intent( getApplicationContext(), About.class);
+	        	startActivity(intent);
+	        	return true;
+	        default:
+	        	return super.onOptionsItemSelected(item);
         }
         
     }
@@ -100,10 +100,10 @@ public class MainMenu extends BaseActivity {
 		String fontPath = "fonts/Bambina.ttf";
         Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
         
-        TextView title_game1 = (TextView)findViewById(R.id.titleGame1);
+        TextView title_game1 = (TextView)findViewById(R.id.titleClassicMode);
         title_game1.setTypeface(type);
         
-        TextView title_game2 = (TextView)findViewById(R.id.titleGame2);
+        TextView title_game2 = (TextView)findViewById(R.id.titleInfiniteMode);
         title_game2.setTypeface(type);
     }
     
@@ -125,13 +125,27 @@ public class MainMenu extends BaseActivity {
  			}
  		});
          
-         /* Image game 1 : Splash Bubbles*/
-         Button game1 = (Button) findViewById(R.id.AccessGame1);
-         game1.setOnClickListener(new OnClickListener() {
- 			public void onClick(View v) {
- 				
- 			}
- 		});
+         Button classicMode = (Button) findViewById(R.id.AccessClassicMode);
+         classicMode.setOnClickListener(new OnClickListener() {
+
+	         @Override
+	         public void onClick(View v) {
+	         	Intent intent = new Intent(getApplicationContext(), GamePlay.class);
+	         	intent.putExtra("id", EGamePlay.CLASSIC);
+	         	startActivity(intent);
+	         }
+         });
+
+         Button infiniteMode = (Button) findViewById(R.id.AccessInfiniteMode);
+         infiniteMode.setOnClickListener(new OnClickListener() {
+
+	         @Override
+	         public void onClick(View v) {
+	        	 Intent intent = new Intent(getApplicationContext(), GamePlay.class);
+	        	 intent.putExtra("id", EGamePlay.INFINITE);
+	        	 startActivity(intent);
+	         }
+         });
          
     }
 }

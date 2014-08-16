@@ -1,10 +1,13 @@
 package com.cgteam.bubblesparty.menu;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -20,13 +23,31 @@ public class About extends BaseActivity {
         setContentView(R.layout.about);
         
         /* Affiche la barre de titre */
-        getActionBar().show();
+        ActionBar bar = getActionBar();
+        bar.show();
+        bar.setDisplayHomeAsUpEnabled(true);
         
         /* Gestion de boutons */
         bindButtons();
         
         /* version du projet */
         drawVersionOfProject();
+    }
+	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        
+        if (id==android.R.id.home)
+        	finish();
+        
+        return super.onOptionsItemSelected(item);
+        
     }
 	
 	 /**
@@ -65,12 +86,7 @@ public class About extends BaseActivity {
 					/* Page internet normal */
 					intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/SplashBubble?fref=ts"));
  			   	}
-				if ( intent != null ){
-					startActivity(intent);
-				}
-				else{
-					Log.e("FACEBOOK", "erreur de redirection facebook");
-				}
+				startActivity(intent);
  			}
  		});
          
