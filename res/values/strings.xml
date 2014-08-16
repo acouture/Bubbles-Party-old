@@ -18,8 +18,12 @@
 	<!-- Activité About -->
 	<string name="about_title">About this software :</string>
 	<string name="about_name">Name : Bubbles Party</string>
-	<string name="about_autor">Autor : CGTeam</string>
+	<string name="about_autor">Author : CGTeam</string>
 	<string name="about_version">Version :</string>
 	<string name="about_join">Join us :</string>
 	
+	<!--  Activité GamePlay -->
+	<string name="btn_back">Back</string>
+	<string name="btn_play">Play</string>
+	<string name="btn_HighScore">High scores</string>
 </resources>

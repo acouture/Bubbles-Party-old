@@ -22,4 +22,8 @@
 	<string name="about_version">Version :</string>
 	<string name="about_join">Nous rejoindre :</string>
 
+	<!--  Activité GamePlay -->
+	<string name="btn_back">Retour</string>
+	<string name="btn_play">Jouer</string>
+	<string name="btn_HighScore">High scores</string>
 </resources>

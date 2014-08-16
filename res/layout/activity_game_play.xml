@@ -2,7 +2,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@drawable/menu_background"
+	android:background="@drawable/sous_menu_background"
 	tools:context="com.cgteam.bubblesparty.menu.MainMenu" >
 
 	<!--  Version du jeu -->
@@ -15,20 +15,35 @@
 		android:text="@string/version_name"
 		android:textAppearance="?android:attr/textAppearanceSmall"
 		android:textColor="#FFFFFF" />
-
-	<!--  Bouton quitter -->
+	
+	<!--  Bouton Retour -->
 
 	<Button
-		android:id="@+id/buttonQuit"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_above="@+id/textVersion"
-		android:layout_centerHorizontal="true"
-		android:background="@drawable/btn_custom"
-		android:minWidth="85dp"
-		android:onClick="quit"
-		android:text="@string/quit"
-		android:textColor="#FFFFFF"
-		android:textSize="25sp" />
+	    android:id="@+id/buttonRetour"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/textVersion"
+	    android:layout_centerHorizontal="true"
+	    android:background="@drawable/btn_sous_menu_custom"
+	    android:minWidth="85dp"
+	    android:onClick="quit"
+	    android:text="@string/btn_back"
+	    android:textColor="#FFFFFF"
+	    android:textSize="20sp" />
+
+	<!--  Bouton High Score -->
+
+	<Button
+	    android:id="@+id/buttonHighScore"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/buttonRetour"
+	    android:layout_alignLeft="@+id/buttonRetour"
+	    android:layout_marginBottom="10dp"
+	    android:background="@drawable/btn_sous_menu_custom"
+	    android:minWidth="85dp"
+	    android:text="@string/btn_HighScore"
+	    android:textColor="#FFFFFF"
+	    android:textSize="20sp" />
 
 </RelativeLayout>
