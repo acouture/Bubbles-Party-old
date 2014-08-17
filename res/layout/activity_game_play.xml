@@ -1,49 +1,175 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="@drawable/sous_menu_background"
-	tools:context="com.cgteam.bubblesparty.menu.MainMenu" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sous_menu_background"
+    tools:context="com.cgteam.bubblesparty.menu.MainMenu" >
 
-	<!--  Version du jeu -->
-	<TextView
-		android:id="@+id/textVersion"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_alignParentRight="true"
-		android:text="@string/version_name"
-		android:textAppearance="?android:attr/textAppearanceSmall"
-		android:textColor="#FFFFFF" />
-	
-	<!--  Bouton Retour -->
+    <LinearLayout
+        android:id="@+id/sous_menu_main_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
 
-	<Button
-	    android:id="@+id/buttonRetour"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/textVersion"
-	    android:layout_centerHorizontal="true"
-	    android:background="@drawable/btn_sous_menu_custom"
-	    android:minWidth="85dp"
-	    android:onClick="quit"
-	    android:text="@string/btn_back"
-	    android:textColor="#FFFFFF"
-	    android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/sous_menu_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:background="@drawable/sous_menu_header" 
+            android:adjustViewBounds="true"
+        />
+        
+        <LinearLayout
+            android:id="@+id/sous_menu_support_content_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.90"
+            android:background="@drawable/sous_menu_mode_support_trans"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp" >
 
-	<!--  Bouton High Score -->
+		    	<LinearLayout
+		        android:id="@+id/sous_menu_content_container"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:orientation="vertical" 
+		        android:background="@drawable/sous_menu_background_container"
+		    	>
 
-	<Button
-	    android:id="@+id/buttonHighScore"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/buttonRetour"
-	    android:layout_alignLeft="@+id/buttonRetour"
-	    android:layout_marginBottom="10dp"
-	    android:background="@drawable/btn_sous_menu_custom"
-	    android:minWidth="85dp"
-	    android:text="@string/btn_HighScore"
-	    android:textColor="#FFFFFF"
-	    android:textSize="20sp" />
+		    		<TextView
+		    		    android:id="@+id/sous_menu_title"
+		    		    android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content"
+		    		    android:layout_gravity="center"
+		    		    android:layout_marginBottom="10dp"
+		    		    android:layout_marginTop="10dp"
+		    		    android:text="@string/gameplay_title"
+		    		    android:textColor="#FFFFFF"
+		    		    android:textSize="25sp" />
+		    		
+		    		<ImageView
+			            android:id="@+id/sous_menu_separation_title"
+			            android:layout_width="fill_parent"
+			            android:layout_height="0dp"
+			            android:background="@drawable/sous_menu_separation" 
+			            android:adjustViewBounds="true"
+			            android:layout_weight="0.05"
+			        />
+		    		
+		    		<ScrollView
+		    		    android:id="@+id/sous_menu_container_content"
+			            android:layout_width="fill_parent"
+			            android:layout_height="0dp"
+			            android:layout_weight="0.8"
+			            >
+			            
+		    		    <LinearLayout
+					        android:id="@+id/sous_menu_content"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:orientation="vertical"
+					    >
+					    
+		    		        <TextView
+				    		    android:id="@+id/test"
+				    		    android:layout_width="wrap_content"
+				    		    android:layout_height="wrap_content"
+				    		    android:layout_marginBottom="10dp"
+				    		    android:layout_marginTop="10dp"
+				    		    android:text="@string/test"
+				    		    android:textColor="#FFFFFF"
+				    		    android:textSize="15sp" />
+		    		        
+		    		        <TextView
+				    		    android:id="@+id/test2"
+				    		    android:layout_width="wrap_content"
+				    		    android:layout_height="wrap_content"
+				    		    android:layout_marginBottom="10dp"
+				    		    android:layout_marginTop="10dp"
+				    		    android:text="@string/test"
+				    		    android:textColor="#FFFFFF"
+				    		    android:textSize="15sp" />
+		    		        
+		    		        <TextView
+				    		    android:id="@+id/test3"
+				    		    android:layout_width="wrap_content"
+				    		    android:layout_height="wrap_content"
+				    		    android:layout_marginBottom="10dp"
+				    		    android:layout_marginTop="10dp"
+				    		    android:text="@string/test"
+				    		    android:textColor="#FFFFFF"
+				    		    android:textSize="15sp" />
+					    
+			    		</LinearLayout>
+			            
+			        </ScrollView>
+				    
+		    		<ImageView
+			            android:id="@+id/sous_menu_separation_content"
+			            android:layout_width="fill_parent"
+			            android:layout_height="0dp"
+			            android:background="@drawable/sous_menu_separation" 
+			            android:adjustViewBounds="true"
+			            android:layout_weight="0.05"
+			        />
+		    		
+		    		<Button
+		                android:id="@+id/sous_menu_button_play"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:layout_marginBottom="10dp"
+		                android:background="@drawable/sous_menu_bouton_play" 
+	             	/>
+		        
+	        	</LinearLayout>  
+	        
+        </LinearLayout>
+        
+        <LinearLayout
+	        android:id="@+id/sous_menu_bottom_container"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="0.05"
+	        android:weightSum="1.0"
+	        android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/buttonHighScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_sous_menu_custom"
+                android:text="@string/btn_HighScore"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+             />
+            
+            <Button
+                android:id="@+id/buttonRetour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_sous_menu_custom"
+                android:onClick="quit"
+                android:text="@string/btn_back" 
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+            />
+	        
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

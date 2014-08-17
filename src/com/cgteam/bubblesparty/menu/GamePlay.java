@@ -1,10 +1,12 @@
 package com.cgteam.bubblesparty.menu;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cgteam.bubblesparty.R;
@@ -13,10 +15,12 @@ import com.cgteam.bubblesparty.R;
 public class GamePlay extends BaseActivity
 {
 	private EGamePlay id;
+	private String title;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_game_play);
 		
 		Bundle bundle = getIntent().getExtras();
@@ -24,8 +28,10 @@ public class GamePlay extends BaseActivity
 		
 		switch(id){
 			case CLASSIC:
+				title = this.getString(R.string.classic_mode);
 				break;
 			case INFINITE:
+				title = this.getString(R.string.infinite_mode);
 				break;
 			default:
 				// On préviens l'utilisateur
@@ -35,7 +41,42 @@ public class GamePlay extends BaseActivity
 				finish();
 				break;
 		}
+		
+		/* Changement de la police sur les éléments à écrire (btn)*/
+        changeBtnFonts();
+        
+        /* Changement du titre */
+        changeTitle(title);
+		
 	}
+	
+	/** 
+     * Changement de la police d'écriture sur les boutons
+     */
+    public void changeBtnFonts(){
+    	String fontPath = "fonts/Bambina.ttf";
+    	Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
+    	
+        TextView btn_highScore = (TextView)findViewById(R.id.buttonHighScore);
+        btn_highScore.setTypeface(type);
+        
+        TextView btn_retour = (TextView)findViewById(R.id.buttonRetour);
+        btn_retour.setTypeface(type);
+    }
+    
+    /** 
+     * Changement de la police d'écriture du titre
+     * Changement du titre du mode de jeu
+     */
+    public void changeTitle(String title){
+    	String fontPath = "fonts/Bambina.ttf";
+    	Typeface type = Typeface.createFromAsset(getAssets(), fontPath);
+    	
+    	TextView menu_title = (TextView) findViewById(R.id.sous_menu_title);
+    	menu_title.setText(title);
+    	menu_title.setTypeface(type);
+    	
+    }
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
