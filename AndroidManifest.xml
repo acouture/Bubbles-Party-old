@@ -38,6 +38,14 @@
 			android:label="@string/app_name" >
         </activity>
         
+        <!-- Activity HighScore -->
+        <activity
+			android:name="com.cgteam.bubblesparty.menu.HighScores"
+			android:label="@string/app_name" >
+        </activity>
+        
+        
+        
     </application>
 
 </manifest>

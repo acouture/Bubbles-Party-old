@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Ressources pour la base de données  -->
+    
+    <!-- Les différents jeux -->
+    <string name="game_infinite_mode">infinite_mode</string>
+    <string name="game_classic_mode">classic_mode</string>
+    
+    <!-- Option de scores -->
+    <integer name="number_of_high_scores">5</integer>
+    
+</resources>

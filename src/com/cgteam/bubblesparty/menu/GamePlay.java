@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ public class GamePlay extends BaseActivity
 {
 	private EGamePlay id;
 	private String title;
+	private String game_bdd;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +33,11 @@ public class GamePlay extends BaseActivity
 		switch(id){
 			case CLASSIC:
 				title = this.getString(R.string.classic_mode);
+				game_bdd = this.getString(R.string.game_classic_mode);
 				break;
 			case INFINITE:
 				title = this.getString(R.string.infinite_mode);
+				game_bdd = this.getString(R.string.game_infinite_mode);
 				break;
 			default:
 				// On préviens l'utilisateur
@@ -47,7 +53,26 @@ public class GamePlay extends BaseActivity
         
         /* Changement du titre */
         changeTitle(title);
+        
+        /* Mise en place des actions sur les boutons */
+        bindsButtons();
 		
+	}
+	
+	public void bindsButtons(){
+		// High scores
+		Button highScores = (Button) findViewById(R.id.buttonHighScore);
+		highScores.setOnClickListener(new OnClickListener() {
+
+	         @Override
+	         public void onClick(View v) {
+	         	Intent intent = new Intent(getApplicationContext(), HighScores.class);
+	         	intent.putExtra("game_title", title);
+	         	intent.putExtra("game_bdd", game_bdd);
+	         	startActivity(intent);
+	         }
+        });
+        
 	}
 	
 	/** 
